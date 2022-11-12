@@ -1,6 +1,8 @@
 #!/bin/bash
 
-PS3="Ingrese una opción: "
+PS3="
+Ingrese una opción: 
+"
 
 select opc in Sumar Restar Salir
 
@@ -28,7 +30,7 @@ select opc in Sumar Restar Salir
             echo 
             echo "Resultado de fecha modificada: $dat"
             echo
-            cal "$(date --date='-'"$di"' day -'"$me"' month -'"$ye"' year' +"%Y-%m-%d")"
+            cal "$(date --date='+'"$di"' day +'"$me"' month +'"$ye"' year' +"%Y-%m-%d")"
             echo "---------------------------------------"
     break;;
 
