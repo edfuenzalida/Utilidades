@@ -1,4 +1,5 @@
 #!/bin/bash
+# Versión 1.2
 
 PS3="
 Ingrese una opción: "

@@ -1,12 +1,19 @@
 #!/bin/bash
+# Version 1.2
+# Fecha 25.11.2022
+# by edrox
 
 PS3="
 Ingrese una opción: "
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 menu=("Limpiar caché")
 =======
 menu=("Limpiar caché" "Actualizar DNF")
+>>>>>>> ramaBeta
+=======
+menu=("Limpiar caché" "Actualizar DNF" "Consulta espacio en disco local")
 >>>>>>> ramaBeta
 
 while true; do
@@ -52,6 +59,20 @@ while true; do
                 echo
                 exit
             break 2;;
+
+            3)
+                echo
+                df_answer=`df -h .`
+                echo "********************************"
+                echo
+                echo "Espacio en disco local: "
+                echo
+                echo "$df_answer"
+                echo
+                echo "********************************"
+                echo
+                exit
+            break 2;;
                 
 >>>>>>> ramaBeta
             $((${#menu[@]}+1)))
@@ -62,10 +83,7 @@ while true; do
                 echo "See you later bro!... :3"
                 echo
                 echo "---------------------------"
-            break 2;;
-
-
-            
+            break 2;;            
 
             *)
                 echo
