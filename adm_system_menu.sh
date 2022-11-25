@@ -6,16 +6,6 @@
 PS3="
 Ingrese una opción: "
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-menu=("Limpiar caché")
-=======
-menu=("Limpiar caché" "Actualizar DNF")
->>>>>>> ramaBeta
-=======
-menu=("Limpiar caché" "Actualizar DNF" "Consulta espacio en disco local")
->>>>>>> ramaBeta
-
 while true; do
 
     echo
@@ -30,14 +20,13 @@ while true; do
                 echo
 #               echo "Actual espacio consumido en Caché: " 
                 sudo sh -c 'echo 3 >/proc/sys/vm/drop_caches'
-<<<<<<< HEAD
                 echo "Limpiando memoria cache"
                 echo
                 echo "Limpieza realizada...."
                 exit
             break 2;;
 
-=======
+
                 echo "*******************************"
                 echo "Limpiando memoria cache"
                 echo "*******************************"
@@ -74,7 +63,6 @@ while true; do
                 exit
             break 2;;
                 
->>>>>>> ramaBeta
             $((${#menu[@]}+1)))
 
                 echo
