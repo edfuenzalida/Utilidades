@@ -1,5 +1,5 @@
 #!/bin/bash
-# Version 1.2
+# Version 1.2.2
 # Fecha 25.11.2022
 # by edrox
 
