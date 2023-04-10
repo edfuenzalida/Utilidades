@@ -1,6 +1,6 @@
 #!/bin/bash
-# Version 1.2.2
-# Fecha 25.11.2022
+# Version 1.2.3
+# Fecha 10.04.2023
 # by edrox
 
 PS3="
@@ -10,7 +10,7 @@ while true; do
 
     echo
 
-    select opc in "${menu[@]}" Salir
+    select opc in "${menu[@]}" 'Borrar Cache' 'Actualizar paquetes DNF' 'Consultar espacio en disco' Salir
         
         do
 
@@ -20,18 +20,14 @@ while true; do
                 echo
 #               echo "Actual espacio consumido en Caché: " 
                 sudo sh -c 'echo 3 >/proc/sys/vm/drop_caches'
+                echo "*******************************"
+                echo
                 echo "Limpiando memoria cache"
                 echo
-                echo "Limpieza realizada...."
-                exit
-            break 2;;
-
-
-                echo "*******************************"
-                echo "Limpiando memoria cache"
                 echo "*******************************"
                 sleep 2
                 echo "Limpieza realizada...."
+                echo
                 echo "*******************************"
                 echo
                 exit
