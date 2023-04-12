@@ -1,16 +1,18 @@
 #!/bin/bash
-# Version 1.2.3
-# Fecha 10.04.2023
+# Version 1.2.4
+# Fecha 11.04.2023
 # by edrox
 
 PS3="
 Ingrese una opción: "
 
+menu=("Borrar Cache" "Actualizar paquetes DNF" "Consultar espacio en disco" "Memoria RAM Disponible")
+
 while true; do
 
     echo
 
-    select opc in "${menu[@]}" 'Borrar Cache' 'Actualizar paquetes DNF' 'Consultar espacio en disco' Salir
+    select opc in "${menu[@]}" Salir
         
         do
 
@@ -18,7 +20,6 @@ while true; do
 
             1)
                 echo
-#               echo "Actual espacio consumido en Caché: " 
                 sudo sh -c 'echo 3 >/proc/sys/vm/drop_caches'
                 echo "*******************************"
                 echo
@@ -31,7 +32,7 @@ while true; do
                 echo "*******************************"
                 echo
                 exit
-            break 2;;
+                break 2;;
 
             2)
                 echo
@@ -43,7 +44,7 @@ while true; do
                 echo "********************************"
                 echo
                 exit
-            break 2;;
+                break 2;;
 
             3)
                 echo
@@ -57,9 +58,23 @@ while true; do
                 echo "********************************"
                 echo
                 exit
-            break 2;;
+                break 2;;
                 
-            $((${#menu[@]}+1)))
+	        4)
+                free_answer=`free -h`
+                echo
+                echo "**********************************"
+                echo
+                echo " Cantidad de memoria RAM disponible: "
+                echo
+                echo "$free_answer"
+                echo 
+                echo "**********************************"
+                echo
+                exit
+                break 2;;
+
+	        $((${#menu[@]}+1)))
 
                 echo
                 echo "---------------------------"
@@ -67,7 +82,9 @@ while true; do
                 echo "See you later bro!... :3"
                 echo
                 echo "---------------------------"
-            break 2;;            
+                echo
+                exit
+            break 2;;
 
             *)
                 echo
@@ -78,7 +95,6 @@ while true; do
                 echo
                 echo "---------------------------"
                 echo
-    
             break;;
             
     esac
