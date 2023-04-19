@@ -1,6 +1,6 @@
 #!/bin/bash
-# Version 1.2.4
-# Fecha 11.04.2023
+# Version 1.2.5
+# Fecha 18.04.2023
 # by edrox
 
 PS3="
@@ -10,6 +10,10 @@ menu=("Borrar Cache" "Actualizar paquetes DNF" "Consultar espacio en disco" "Mem
 
 while true; do
 
+    echo
+    echo "            Bienvenido al menu de utilidades"
+    echo
+    echo "Seleccione una opción:"
     echo
 
     select opc in "${menu[@]}" Salir
@@ -31,8 +35,8 @@ while true; do
                 echo
                 echo "*******************************"
                 echo
-                exit
-                break 2;;
+                sleep 2
+            break;;
 
             2)
                 echo
@@ -43,8 +47,8 @@ while true; do
                 echo
                 echo "********************************"
                 echo
-                exit
-                break 2;;
+                sleep 2
+            break;;
 
             3)
                 echo
@@ -57,8 +61,8 @@ while true; do
                 echo
                 echo "********************************"
                 echo
-                exit
-                break 2;;
+                sleep 2
+            break;;
                 
 	        4)
                 free_answer=`free -h`
@@ -71,8 +75,8 @@ while true; do
                 echo 
                 echo "**********************************"
                 echo
-                exit
-                break 2;;
+                sleep 2
+            break;;
 
 	        $((${#menu[@]}+1)))
 
